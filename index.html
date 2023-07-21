@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-     <title>Title  Case</title>
+     <title>Title Case</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/forms.css">
-    <style>
-      #output{
+  <style>
+    #output{
         border-radius:5px;
-        min-height:40px;
+        min-height:40px;;
         border:1px solid black;
-        width:50%;
         margin:auto;
+        width:50%;
         font-size:x-large;
-      }
-    </style>
+    }
+  </style>
  </head>
  <body>
      <header>
      <h1 class="page-header">Title Case</h1>
         <nav class="topnav" id="myTopnav">
             <a href="index.html" class="active">Home</a>
-            <a href="#">Link</a>
-            <a href="#">Link</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
         </nav>
      </header>
@@ -32,44 +30,46 @@
    <main class="wrapper">
  
     <h2 class="subheader">Place form code below:</h2>
-    <div id="output"></div>
+    <div id="output">Output</div>
     <form method="post" action="" class="main-form">
       <div>
-        <label for="input">Input</label><br>
-        <input type="text" name="input" id="input" placeholder="Input" required autofocus>
+        <label for="input">input</label><br>
+        <input type="text" name="input" id="input" placeholder="input" required autofocus>
       </div>
-       <div>
+      <div>
         <input type="submit" id="submit">
       </div>
     </form>
+    <h3>Page Origins</h3>
+    <p>This undertaking was constructed utilizing HTML, CSS, and JavaScript. In this endeavor you can enter any lowercase word or words and by presenting it will consequently Capitalize the first character in every term</p>
+    <p>mobile navigation originates from <a href="https://www.w3schools.com/howto/howto_js_mobile_navbar.asp" target="_blank">W3Schools</a></p>
     <footer>
       <p><small>&copy; 2021-<span id="this-year"></span> by 
-          YOUR NAME HERE, All Rights Reserved ~ 
+          Kibrom Hagos, All Rights Reserved ~ 
           <a id="html-checker" href="#" target="_blank">Check HTML</a> ~ 
           <a id="css-checker" href="#" target="_blank">Check CSS</a></small>
      </p>
     </footer>
   </main>
-  <script src="js/main.js"></script>
+  <script src="js/main.js"></script>   
   <script>
 
     function titleCase(str){
-        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
     }
 
-    const mySubmit = document.querySelector("#submit");
-    console.log(mySubmit);
+      const mySubmit = document.querySelector("#submit");
+      console.log(mySubmit);
 
-    mySubmit.addEventListener("click",function(ev){
-      ev.preventDefault();
-      const myInput = document.querySelector("#input");
-      const myOutput = document.querySelector("#output");
-      let myString = myInput.value;
-      myString = titleCase(myString);
-      myOutput.innerHTML = myString;
-      //alert(myInput.value);
-    });
+      mySubmit.addEventListener("click",function(ev){
+          ev.preventDefault();
+          const myInput = document.querySelector("#input");
+          const myOutput = document.querySelector("#output");
+          myOutput.innerHTML = titleCase(myInput.value);
+          //alert(myInput.value);
 
-  </script>   
+      });
+
+  </script>
  </body>
 </html>
